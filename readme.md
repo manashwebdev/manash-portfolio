@@ -35,7 +35,7 @@ A fast, animated, single-page portfolio showcasing SaaS-style products, AI-power
 
 ## About Me
 
-I'm a full stack developer from Haridwar, Uttarakhand, India, working independently since 2025. I design, build and deploy SaaS-style web applications focused on **developer productivity, resume intelligence and GitHub analytics**, handling the full lifecycle: planning, UI/UX, backend, testing, deployment and maintenance.
+I'm a full stack developer from Haridwar, Uttarakhand, India, working independently since 2025. I design, build and deploy SaaS-style web applications focused on **developer productivity, resume intelligence, GitHub analytics and freelancer-client collaboration**, handling the full lifecycle: planning, UI/UX, backend, testing, deployment and maintenance.
 
 **What I work with:** React, Next.js, TypeScript, Node.js, Express.js, MongoDB, REST APIs, JWT authentication and Gemini AI integrations, deployed on Vercel, Render and Netlify.
 
@@ -88,15 +88,17 @@ Turn any local shop into a digital storefront in about 2 minutes.
 
 ---
 
-### 💸 Splitwise Pro — Expense splitting & trip budgets
-A modern expense-splitting web app for groups and trips.
+### 🛡️ ScopeShield: Shared scope agreements for freelancers and clients
+Both sides see the same deal, and every change needs the other side's approval.
 
-- Track shared expenses and trip budgets in one place
-- Spending analytics dashboards
-- Settlement reports to simplify group payouts
+- **Shared agreement:** deliverables, exclusions, budget and dates in one view for freelancer and client
+- **Two-sided approvals:** either side can propose a change, only the other side can approve it
+- **Private share link:** clients review and respond without creating an account, with live sync between both views
+- **Client Orbit:** a canvas visualization that ranks projects by urgency, pending decisions and due dates
+- **Secure sign-in:** scrypt-hashed passwords, JWT sessions, login rate limiting and owner-scoped authorization on every project route
 
-**Stack:** React, Tailwind CSS, Node.js, Express.js, MongoDB
-[Live Demo](https://splitwise-pro.netlify.app/) · [Source Code](https://github.com/manashwebdev/spliwise-pro)
+**Stack:** React, Vite, Node.js, Express.js, MongoDB, JWT, Canvas API
+[Live Demo](https://scopeshield-pi.vercel.app/) · [Source Code](https://github.com/manashwebdev/scopeshield)
 
 ---
 
@@ -122,9 +124,10 @@ Developers prove skills through coding challenges, GitHub repos, live demos and 
 | Project | What it does | Links |
 |---|---|---|
 | RepoCosmos | Turns any public GitHub repo into an interactive 3D galaxy with a time slider that replays how the project grew | [Live](https://repocosmos.vercel.app/) |
-| Dental Appointment System | Scheduling platform with REST APIs and MySQL | [Live](https://manash-dental-care.netlify.app) |
 | Luxury Salon Management | Salon site with a MongoDB-backed operations dashboard | [Live](https://manash-luxury-salon.netlify.app) |
-| Manash Fitness | Gym website with membership plans, trainer profiles and workout programs | [Live](https://manash-fitness.netlify.app/) |
+| Thock | Mechanical keyboard sounds in the browser: synthesized switch audio, a typing test, a shareable switch builder and music that follows your typing speed | [Live](https://thock-eta.vercel.app) |
+| Oath | Track every promise you make and see who's waiting on you in a live orbit, with a trust score and overdue alerts | [Live](https://oath-two-topaz.vercel.app) |
+| Foresight | Calibration lab for your predictions: log what you expect, resolve it later, and see if your confidence matches reality | [Live](https://foresight-ten-nu.vercel.app) |
 
 ---
 
@@ -145,7 +148,7 @@ Developers prove skills through coding challenges, GitHub repos, live demos and 
 - Starfield canvas background with subtle parallax
 - Scroll progress bar and active-section highlighting in the navbar
 - Project cards with animated visuals and reveal-on-scroll effects
-- Built-in **resume download** (PDF embedded in the page)
+- Built-in **resume download** (PDF embedded in the page, so it always works offline)
 - Contact form powered by Formspree, with an email fallback
 - Dark theme with light-mode support, fully responsive down to mobile
 - Respects `prefers-reduced-motion` and uses accessible labels and focus styles
@@ -194,6 +197,17 @@ vercel --prod
 ```
 
 **Netlify:** drag and drop the project folder at [app.netlify.com/drop](https://app.netlify.com/drop), or connect the GitHub repo.
+
+---
+
+## Update the resume
+The resume PDF is embedded inside `index.html` as a base64 string (the `RB` variable in the script at the bottom). To replace it, convert the new PDF and paste the result between the quotes:
+
+```bash
+base64 -w 0 Manash_Khati_Resume.pdf     # macOS: base64 -i Manash_Khati_Resume.pdf
+```
+
+The download button saves it as `Manash_Khati_Resume.pdf`.
 
 ---
 
